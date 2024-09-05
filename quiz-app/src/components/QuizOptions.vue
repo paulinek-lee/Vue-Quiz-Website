@@ -22,7 +22,7 @@
           :key="card.title"
           :cols="card.flex"
         >
-          <v-card>
+          <v-card :to="card.route">
             <v-img
               :src="card.src"
               class="white--text align-end"
@@ -46,9 +46,9 @@
   export default {
     data: () => ({
       cards: [
-        { title: 'Math', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 6 },
-        { title: 'Science', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Art', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+        { title: 'Math', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 6,route:'/math' },
+        { title: 'Science', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 ,route:'/science'},
+        { title: 'Art', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6,route:'/art' },
       ],
     }),
   }
