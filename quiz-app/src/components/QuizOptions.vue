@@ -1,15 +1,16 @@
 <template>
   <v-card
-    class="mx-auto"
+    class="mx-auto mb-6"
     max-width="500"
+    color="#E2DAD6"
   >
 
     <v-toolbar
-      color="indigo"
+      color="#7FA1C3"
       dark
     >
 
-      <v-toolbar-title>Quizzes</v-toolbar-title>
+      <v-toolbar-title color="#6482AD">Categories</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -22,7 +23,7 @@
           :key="card.title"
           :cols="card.flex"
         >
-          <v-card :to="card.route">
+          <v-card :to="card.route" class="rounded-lg">
             <v-img
               :src="card.src"
               class="white--text align-end"
@@ -49,6 +50,7 @@
         { title: 'Math', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 6,route:'/math' },
         { title: 'Science', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 ,route:'/science'},
         { title: 'Art', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6,route:'/art' },
+        
       ],
     }),
   }
