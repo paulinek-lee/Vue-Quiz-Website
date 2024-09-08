@@ -19,6 +19,7 @@
         <v-col cols="auto">
           <!-- <v-btn color="primary"  @click="startTimer" :disabled="timerRunning">Start Timer</v-btn>
           <v-btn color="secondary" @click="resetTimer">Reset Timer</v-btn> -->
+          
         </v-col>
       </v-row>
     </v-container>
@@ -30,7 +31,7 @@
   export default {
     data() {
       return {
-        timeLeft: 600, // 10 minutes in seconds
+        timeLeft: 300, // 10 minutes in seconds
         interval: null, // Holds the setInterval reference
         timerRunning: false
 

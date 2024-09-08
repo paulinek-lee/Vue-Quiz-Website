@@ -12,7 +12,7 @@
   export default {
     name: 'MainQuiz',
     components: {
-      QuizTimer, // Use QuizTimer directly (instead of aliasing it as QuizOptions)
+      QuizTimer, 
       ArtData
     },
   };

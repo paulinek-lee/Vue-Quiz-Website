@@ -3,6 +3,10 @@
       <!-- Render the current question -->
       <div v-if="currentQuestionIndex < questions.length">
         <h3>{{ currentQuestion.q }}</h3>
+        
+        <!-- Render the image for the current question -->
+        <img :src="currentQuestion.link" alt="Art Image" class="question-image" />
+  
         <div v-for="option in currentQuestion.options" :key="option">
           <v-btn @click="checkAnswer(option, currentQuestion.answer)">{{ option }}</v-btn>
         </div>
@@ -25,27 +29,32 @@
           {
             q: "Who painted the famous artwork 'Starry Night'?",
             options: ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Leonardo da Vinci"],
-            answer: "Vincent van Gogh"
+            answer: "Vincent van Gogh",
+            link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFWac6FmArsdaTagQFG1gMJqQS7mO7zWMeYw&s"
           },
           {
             q: "Which art movement is Salvador Dalí associated with?",
             options: ["Cubism", "Surrealism", "Impressionism", "Realism"],
-            answer: "Surrealism"
+            answer: "Surrealism",
+            link: "https://cdn.sanity.io/images/cctd4ker/production/473f67e2d32a6e693c19d30bda823320cc1f04b9-595x878.jpg?w=1920&q=75&fit=clip&auto=format"
           },
           {
             q: "What is the name of the painting where Mona Lisa is depicted?",
             options: ["The Last Supper", "Mona Lisa", "The Creation of Adam", "Girl with a Pearl Earring"],
-            answer: "Mona Lisa"
+            answer: "Mona Lisa",
+            link: "https://i0.wp.com/lightsources.org/wp-content/uploads/2023/10/DaVinci_web.png?w=700&ssl=1"
           },
           {
             q: "The Persistence of Memory is a famous painting by which artist?",
             options: ["Edvard Munch", "Pablo Picasso", "Salvador Dalí", "Georgia O'Keeffe"],
-            answer: "Salvador Dalí"
+            answer: "Salvador Dalí",
+            link: "https://cdn.sanity.io/images/cctd4ker/production/473f67e2d32a6e693c19d30bda823320cc1f04b9-595x878.jpg?w=1920&q=75&fit=clip&auto=format"
           },
           {
             q: "Which artist is known for pioneering the style of Cubism?",
             options: ["Pablo Picasso", "Claude Monet", "Jackson Pollock", "Michelangelo"],
-            answer: "Pablo Picasso"
+            answer: "Pablo Picasso",
+            link: "https://www.cubismartwork.com/wp-content/uploads/2023/09/pablo-picasso-cubism.jpg"
           }
         ]
       };
@@ -79,4 +88,25 @@
     }
   };
   </script>
+  
+  <style scoped>
+ .question-image {
+  max-width: 400px; /* Increase the image size */
+  height: auto;
+  border-radius: 12px; /* Keep the rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  margin-bottom: 20px; /* Adjust margin for space below the image */
+  margin-top: -20px; /* Move the image up slightly */
+  float: right; /* Align the image to the right */
+  margin-left: 30px; /* Space between image and text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.question-image:hover {
+  transform: scale(1.15); /* Enlarge the image a bit more on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+
+  </style>
   
