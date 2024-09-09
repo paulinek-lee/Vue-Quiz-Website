@@ -25,6 +25,8 @@
     </a>
 
       <v-spacer></v-spacer>
+
+      <h2 v-if="$route.path !== '/'">Current Score: {{this.$store.getters.getCount}}</h2>
     </v-app-bar>
 
     <v-main>

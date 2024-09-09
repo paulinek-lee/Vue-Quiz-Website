@@ -39,7 +39,7 @@
       <h1>You lose!</h1>
     </div>
     <div v-else class="d-flex justify-center">
-      <h1>You win!</h1>
+      <h1>You win! You got {{ count }} questions right!</h1>
     </div>
   </div>
 </template>
@@ -72,6 +72,9 @@ export default {
     checkAnswer: function (answer) {
       if (answer) {
         this.btnColor = "green";
+        // Increment the counter by dispatching Vuex action
+        this.$store.dispatch('increment');
+
         this.flashButton();
       } else {
         this.btnColor = "red";
@@ -109,6 +112,11 @@ export default {
       // Use setInterval to run the function every second
       this.timer = 0;
     },
+  },
+  computed: {
+     count() {
+       return this.$store.getters.getCount;
+     }
   },
 
   mounted() {
