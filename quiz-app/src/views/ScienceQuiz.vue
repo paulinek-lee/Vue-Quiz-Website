@@ -109,12 +109,19 @@ export default {
       resetFlag: false
     };
   },
+  computed: {
+     count() {
+       return this.$store.getters.getCount;
+     }
+  },
   methods: {
     incrementScore() {
       this.totalCorrect += 1;
+      this.$store.dispatch('increment');
       console.log('Score incremented:', this.score);
     },
     resetQuiz() {
+      this.$store.dispatch('decrement', this.totalCorrect);
       this.totalCorrect = 0;
       this.resetFlag = !this.resetFlag;
       this.quizSubmitted = false;

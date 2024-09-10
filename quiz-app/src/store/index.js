@@ -15,12 +15,19 @@ export default new Vuex.Store({
   mutations: {
     increment (state) {
       state.correctCount++;
+    },
+    decrement(state, amount) {
+      state.correctCount -= amount;
     }
   },
   actions: {
     increment ({ commit }) { 
       commit('increment')
+    },
+    decrement({commit}, amount){
+      commit('decrement', amount);
     }
+
   },
   modules: {
   }
